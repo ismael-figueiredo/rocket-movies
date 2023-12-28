@@ -3,13 +3,28 @@ import style from "./createmovie.module.css"
 import { FaArrowLeft } from "react-icons/fa"
 import { TextButton } from "../../components/TextButton"
 import { Input } from "../../components/Input"
+import { NewItem } from "../../components/NewItem"
+import { useState } from "react"
 
 export function CreateMovie() {
+  const [tags, setTags] = useState([])
+  const [newTag, setNewtag] = useState("")
+
+  function handleAddTag() {
+    setTags((prevState) => [...prevState, newTag])
+    setNewtag("")
+  }
+
+  function handleRemovetag(deleted){
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
+
+  }
+
   return (
     <div className={style.container}>
       <Header />
       <main>
-        <div className={style.title}>
+        <div title="novo filme" className={style.title}>
           <div className={style.back}>
             <FaArrowLeft />
             <TextButton title={`Voltar`} />
@@ -17,7 +32,7 @@ export function CreateMovie() {
           <h2>Novo filme</h2>
         </div>
 
-        <div className={style.form}>
+        <div title="formulário" className={style.form}>
           <div className={style.input}>
             <Input type="text" placeholder="Título" />
             <Input type="number" placeholder="Sua nota (de 0 a 5)" />
@@ -30,7 +45,24 @@ export function CreateMovie() {
           </div>
 
           <span className={style.title2}>Marcadores</span>
-          <div className={style.markers}></div>
+
+          <div className={style.markers}>
+            { tags.map((tag, index) => (
+                <NewItem 
+                  key={String(index)}
+                  value={tag}
+                  onClick={()=> handleRemovetag(tag) }
+                    />
+            ))
+
+            }
+            <NewItem
+              isNew
+              onChange={e => setNewtag(e.target.value)}
+              value={newTag}
+              onClick={handleAddTag}
+            />
+          </div>
           <div className={style.buttons}>
             <button className={style.buttonSave}>Salvar filme</button>
             <button className={style.buttonDelete}>Excluir filme</button>

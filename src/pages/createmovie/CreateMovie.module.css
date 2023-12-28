@@ -69,29 +69,32 @@
   background-color: var(--bg-input-color);
   color: var(--primary-text-color);
 
-  margin-bottom: 40px;
+ ;
 }
 
 .title2 {
   color: var(--gray-600);
 }
 .markers {
-  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  
+
+  flex-wrap: wrap;
+
+  padding: 20px  20px 12px 20px;
+  gap: 24px;
+ 
   width: 100%;
-  min-height: 88px;
+
   border-radius: 8px;
   background: #0d0c0f;
-  span::after {
-    color: gray;
-    font-size: 20px;
-  }
 }
 .buttons {
   display: flex;
   width: 100%;
   gap: 40px;
   margin-bottom: 50px;
-  
 }
 
 .buttonSave {
@@ -104,6 +107,7 @@
   &:hover {
     filter: brightness(0.9);
     transition: 0.15s;
+    cursor: pointer;
   }
 }
 .buttonDelete {
@@ -117,5 +121,6 @@
   &:hover {
     filter: brightness(0.9);
     transition: 0.15s;
+    cursor: pointer;
   }
 }
