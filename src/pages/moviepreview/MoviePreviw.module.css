@@ -53,4 +53,10 @@
 }
 .main{
  padding: 156px 123px 40px;
+ p{
+  text-align: justify;
+ }
+}
+.tag{
+  margin-bottom: 40px;
 }

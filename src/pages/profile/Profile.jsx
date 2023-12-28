@@ -1,15 +1,18 @@
+import style from "./Profile.module.css"
+import { useNavigate } from "react-router-dom"
+
 import { Input } from "../../components/Input"
 import { TextButton } from "../../components/TextButton"
 import { Button } from "../../components/Button"
-import style from "./Profile.module.css"
 import { FaArrowLeft } from "react-icons/fa"
 import { CiMail, CiLock, CiUser, CiCamera } from "react-icons/ci"
 
 export function Profile() {
+  const navigate = useNavigate()
   return (
     <div className={style.container}>
       <header>
-        <div className={style.back}>
+        <div className={style.back} onClick={()=>navigate(-1)}>
           <FaArrowLeft />
           <TextButton title={`Voltar`} />
         </div>

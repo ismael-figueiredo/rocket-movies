@@ -1,5 +1,8 @@
 import style from "./Signin.module.css"
 import image from "../../assets/cine.png"
+import {  useNavigate } from "react-router-dom";
+
+
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button";
 import { TextButton } from "../../components/TextButton";
@@ -9,6 +12,7 @@ import { CiLock } from "react-icons/ci";
 
 
 export function Signin(){
+    const navigate = useNavigate()
     return(
         <div className={style.container}>
             <div className={style.form}>
@@ -31,6 +35,7 @@ export function Signin(){
                 <div className={style.createAccount}>
                 <TextButton
                 title={"Criar conta"}
+                onClick={ ()=> navigate("/signup")}
                 />
                 </div>
                

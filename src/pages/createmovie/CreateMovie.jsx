@@ -1,12 +1,15 @@
-import { Header } from "../../components/Header"
 import style from "./createmovie.module.css"
-import { FaArrowLeft } from "react-icons/fa"
-import { TextButton } from "../../components/TextButton"
-import { Input } from "../../components/Input"
-import { NewItem } from "../../components/NewItem"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
+import { FaArrowLeft } from "react-icons/fa"
+import { TextButton } from "../../components/TextButton"
+import { NewItem } from "../../components/NewItem"
+import { Header } from "../../components/Header"
+import { Input } from "../../components/Input"
+
 export function CreateMovie() {
+  const navigate = useNavigate()
   const [tags, setTags] = useState([])
   const [newTag, setNewtag] = useState("")
 
@@ -24,7 +27,7 @@ export function CreateMovie() {
       <Header />
       <main>
         <div title="novo filme" className={style.title}>
-          <div className={style.back}>
+          <div className={style.back} onClick={() => navigate(-1)}>
             <FaArrowLeft />
             <TextButton title={`Voltar`} />
           </div>

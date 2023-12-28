@@ -1,5 +1,7 @@
 import style from "./Signup.module.css"
 import image from "../../assets/cine.png"
+import { useNavigate } from "react-router-dom";
+
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button";
 import { TextButton } from "../../components/TextButton";
@@ -9,6 +11,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 
 export function Signup(){
+    const navigate = useNavigate()
     return(
         <div className={style.container}>
             <div className={style.form}>
@@ -37,6 +40,7 @@ export function Signup(){
                     <FaArrowLeft/>
                     <TextButton
                          title={`Voltar para o login`}
+                         onClick = {()=> navigate("/")}
                 />  
                 </div>
                

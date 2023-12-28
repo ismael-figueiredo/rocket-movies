@@ -1,16 +1,22 @@
 import style from "./Home.module.css"
+import { useNavigate } from "react-router-dom"
+
+
 import { CardMovie } from "../../components/CardMovie"
 import { Header } from "../../components/Header"
 import { GoPlus } from "react-icons/go"
 
 export function Home() {
+  const navigate = useNavigate()
   return (
     <div className={style.container}>
       <Header />
       <main>
         <div className={style.title}>
           <h2>Meus filmes</h2>
-          <button>
+          <button
+          onClick={()=> navigate("/create")}>
+            
             <GoPlus size="16" />
             Adicionar filme
           </button>

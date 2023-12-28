@@ -12,6 +12,9 @@
   h2 {
     color: var(--primary-color);
     font-size: 24px;
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 .search {
@@ -22,8 +25,10 @@
   justify-content: center;
   align-items: center;
   min-width: 200px;
-
   gap: 10px;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .user {
