@@ -3,9 +3,7 @@ import image from "../../assets/cine.png"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button";
 import { TextButton } from "../../components/TextButton";
-import { CiMail } from "react-icons/ci";
-import { CiLock } from "react-icons/ci";
-import { CiUser } from "react-icons/ci";
+import { CiMail, CiLock, CiUser } from "react-icons/ci"
 import { FaArrowLeft } from "react-icons/fa";
 
 

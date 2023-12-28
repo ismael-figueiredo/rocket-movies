@@ -15,9 +15,8 @@ export function CreateMovie() {
     setNewtag("")
   }
 
-  function handleRemovetag(deleted){
-    setTags(prevState => prevState.filter(tag => tag !== deleted))
-
+  function handleRemovetag(deleted) {
+    setTags((prevState) => prevState.filter((tag) => tag !== deleted))
   }
 
   return (
@@ -47,18 +46,16 @@ export function CreateMovie() {
           <span className={style.title2}>Marcadores</span>
 
           <div className={style.markers}>
-            { tags.map((tag, index) => (
-                <NewItem 
-                  key={String(index)}
-                  value={tag}
-                  onClick={()=> handleRemovetag(tag) }
-                    />
-            ))
-
-            }
+            {tags.map((tag, index) => (
+              <NewItem
+                key={String(index)}
+                value={tag}
+                onClick={() => handleRemovetag(tag)}
+              />
+            ))}
             <NewItem
               isNew
-              onChange={e => setNewtag(e.target.value)}
+              onChange={(e) => setNewtag(e.target.value)}
               value={newTag}
               onClick={handleAddTag}
             />
