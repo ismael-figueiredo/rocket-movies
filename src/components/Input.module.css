@@ -21,7 +21,7 @@
 
 
         &::placeholder {
-          color:var(--terceary-text-color);
+          color:var(--secondary-text-color);
         }
     }
     > svg {

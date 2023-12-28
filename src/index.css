@@ -22,6 +22,6 @@
 
 }
 
-body,html, input{
+body,html, input, textarea{
   font-family: 'Roboto Slab', serif;
 }
