@@ -1,10 +1,12 @@
 import style from "./Header.module.css"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../hooks/auth"
 
 import { Input } from "./Input"
 import { CiSearch } from "react-icons/ci"
 
 export function Header() {
+  const { signOut } = useAuth()
   const navigate = useNavigate()
   return (
     <div className={style.container}>
@@ -20,7 +22,10 @@ export function Header() {
       <div className={style.avatar}>
         <div className={style.user}>
           <span className={style.userName}>Ismael Figueiredo</span>
-          <span className={style.logout}>sair</span>
+          <span
+           className={style.logout}
+           onClick={signOut}
+           >sair</span>
         </div>
         <div>
           <img
