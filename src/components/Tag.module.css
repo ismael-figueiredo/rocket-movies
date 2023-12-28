@@ -1,0 +1,13 @@
+.container{
+  background-color: var(--secondary-color);
+  display: inline;
+  margin-right:8px ;
+  padding: 5px 16px;
+  color: #E5E5E5;
+  border-radius: 8px;
+  &&:hover{
+    filter: brightness(.9);
+    transition: .15s;
+    cursor: pointer;
+  }
+}

@@ -12,10 +12,13 @@
   --bg-input-color:#262529;
   --primary-color:#FF859B;
   --secondary-color:#312E38;
+  --terceary-color:rgba(255, 133, 155, 0.05);
 
   --primary-text-color:#F4EDE8;
   --secondary-text-color:#948F99;
   --terceary-text-color:#CAC4CF;
+
+  --gray-600:#999591;
 
 }
 

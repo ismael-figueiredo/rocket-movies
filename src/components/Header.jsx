@@ -7,7 +7,11 @@ export function Header() {
     <div className={style.container}>
       <h2>RocketMovies</h2>
       <div className={style.search}>
-        <Input icon={CiSearch} placeholder="Pesquise aqui" />
+        <Input 
+        id="search"
+        icon={CiSearch} 
+        type="text"
+        placeholder="Pesquise aqui" />
       </div>
       <div className={style.avatar}>
         <div className={style.user}>

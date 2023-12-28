@@ -1,0 +1,27 @@
+.container {
+  background-color: var(--terceary-color);
+  padding: 32px;
+  width: 100%;
+  min-height: 150px;
+  border-radius: 16px;
+  
+  margin-bottom: 24px;
+  h2 {
+    color: var(--primary-text-color);
+    font-size: 24px;
+    padding-bottom: 8px;
+  }
+  svg {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    size: 12px;
+  }
+
+  p {
+    color: var(--gray-600);
+    max-height: 60px;
+    z-index: -1;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+}
