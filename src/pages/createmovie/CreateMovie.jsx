@@ -18,9 +18,10 @@ export function CreateMovie() {
   const [tags, setTags] = useState([])
   const [newTag, setNewtag] = useState("")
 
- 
-
   function handleAddTag() {
+    if (!newTag) {
+      return alert("Digite algum texto no marcador antes de adicionar!")
+    }
     setTags((prevState) => [...prevState, newTag])
     setNewtag("")
   }
@@ -69,6 +70,7 @@ export function CreateMovie() {
           <div className={style.input}>
             <Input
               id="title"
+              required
               type="text"
               placeholder="Título"
               onChange={(e) => setTitle(e.target.value)}
@@ -110,7 +112,9 @@ export function CreateMovie() {
             <button className={style.buttonSave} onClick={handleNewMovie}>
               Salvar filme
             </button>
-            <button className={style.buttonDelete}>Excluir filme</button>
+            <button onClick={() => navigate("/")} className={style.buttonDelete}>
+              Cancelar
+            </button>
           </div>
         </div>
       </main>

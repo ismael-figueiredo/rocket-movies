@@ -4,8 +4,12 @@
   width: 100%;
   min-height: 150px;
   border-radius: 16px;
-  
   margin-bottom: 24px;
+  &:hover{
+   transform: scale(.99);
+   filter: brightness(.95);
+   transition: .2s;
+  }
   h2 {
     color: var(--primary-text-color);
     font-size: 24px;

@@ -53,6 +53,7 @@
   }
 }
 .main{
+  width: 100%;
  margin: 156px 123px 40px;
  p{
   text-align: justify;
@@ -60,4 +61,10 @@
 }
 .tag{
   margin-bottom: 40px;
+}
+
+.buttons{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

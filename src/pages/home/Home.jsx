@@ -47,8 +47,10 @@ export function Home() {
         </div>
         <div className={style.content}>
           {movie.map((movie) => (
-            <a href={`/previw/${movie.id}`}>
-              <CardMovie key={String(movie.id)} data={movie} />
+            <a 
+            href={`/previw/${movie.id}`} 
+            key={String(movie.id)}>
+              <CardMovie data={movie} />
             </a>
           ))}
         </div>
