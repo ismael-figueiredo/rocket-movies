@@ -3,7 +3,8 @@ import style from "./CardMovie.module.css"
 import { MdStar, MdStarBorder } from "react-icons/md"
 import { Tag } from "./Tag"
 
-export function CardMovie({ title, synopsis, rating = 0 ,tag}) {
+export function CardMovie({ data, ...rest}) {
+  const rating = data.rating
   const renderStars = () => {
     const totalStars = 5
     let stars = []
@@ -15,16 +16,16 @@ export function CardMovie({ title, synopsis, rating = 0 ,tag}) {
     }
     return stars
   }
-  const renderTags = () => {
-    return tag.map((t, index) => <Tag key={index} text={t} />)
-  }
+ 
 
   return (
     <div className={style.container}>
-      <h2>{title}</h2>
+      <h2>{data.title}</h2>
       <div>{renderStars()}</div>
-      <p>{synopsis}</p>
-      {tag && renderTags()}
+      <p>{data.description}</p>
+      {data.tags.map((tag) => (
+        <Tag key={tag.id} text={tag.name} />
+      ))}
     </div>
   )
 }

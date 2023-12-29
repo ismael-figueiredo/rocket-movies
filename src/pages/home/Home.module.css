@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  a{
+    text-decoration: none;
+  }
 }
 .container main {
   margin: 50px 123px;
@@ -14,8 +17,8 @@
 }
 
 .content {
-  height: 100vh;
-  overflow-y: auto;
+  max-height: calc(100vh - 250px);
+  overflow-y: scroll;
 }
 .content::-webkit-scrollbar {
   width: 8px;

@@ -1,6 +1,7 @@
 import style from "./createmovie.module.css"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import { api } from "../../services/api"
 
 import { FaArrowLeft } from "react-icons/fa"
 import { TextButton } from "../../components/TextButton"
@@ -10,8 +11,14 @@ import { Input } from "../../components/Input"
 
 export function CreateMovie() {
   const navigate = useNavigate()
+  const [title, setTitle] = useState("")
+  const [rating, setRating] = useState(0)
+  const [description, setDescription] = useState("")
+
   const [tags, setTags] = useState([])
   const [newTag, setNewtag] = useState("")
+
+ 
 
   function handleAddTag() {
     setTags((prevState) => [...prevState, newTag])
@@ -20,6 +27,30 @@ export function CreateMovie() {
 
   function handleRemovetag(deleted) {
     setTags((prevState) => prevState.filter((tag) => tag !== deleted))
+  }
+  async function handleNewMovie() {
+    if (!title) {
+      return alert("Digite um título para o filme.")
+    }
+    if (!rating || rating < 0 || rating > 5) {
+      return alert("Digite um nota de 0 a 5.")
+    }
+    if (!description) {
+      alert("Digite uma breve sinopse do filme")
+    }
+    if (newTag) {
+      return alert(
+        "Você deito uma tag no campo para adicionar, cique para adicionar ou remova."
+      )
+    }
+    await api.post("/notes", {
+      title,
+      rating,
+      description,
+      tags,
+    })
+    alert("Filme criado com sucesso!")
+    navigate("/")
   }
 
   return (
@@ -36,13 +67,25 @@ export function CreateMovie() {
 
         <div title="formulário" className={style.form}>
           <div className={style.input}>
-            <Input type="text" placeholder="Título" />
-            <Input type="number" placeholder="Sua nota (de 0 a 5)" />
+            <Input
+              id="title"
+              type="text"
+              placeholder="Título"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <Input
+              id="rating"
+              type="number"
+              placeholder="Sua nota (de 0 a 5)"
+              onChange={(e) => setRating(e.target.value)}
+            />
           </div>
           <div>
             <textarea
+              id="description"
               className={style.textarea}
               placeholder="Oservações"
+              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
 
@@ -64,7 +107,9 @@ export function CreateMovie() {
             />
           </div>
           <div className={style.buttons}>
-            <button className={style.buttonSave}>Salvar filme</button>
+            <button className={style.buttonSave} onClick={handleNewMovie}>
+              Salvar filme
+            </button>
             <button className={style.buttonDelete}>Excluir filme</button>
           </div>
         </div>

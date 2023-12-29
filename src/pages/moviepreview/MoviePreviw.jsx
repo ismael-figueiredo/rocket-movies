@@ -4,8 +4,17 @@ import { FaArrowLeft, FaRegClock } from "react-icons/fa"
 import { TextButton } from "../../components/TextButton"
 import { MdStar, MdStarBorder } from "react-icons/md"
 import { Tag } from "../../components/Tag"
+import { useAuth } from "../../hooks/auth"
+import { useState,useEffect } from "react"
+import {api} from "../../services/api.js"
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
-export function Moviepreviw({ title, rating=0, synopsis, tag }) {
+
+export function Moviepreviw({ title, rating=0, synopsis, tag=["teste"] }) {
+
+  const {user} = useAuth()
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}`: avatarPlaceholder
   const renderStars = () => {
     const totalStars = 5
     let stars = []
@@ -33,8 +42,8 @@ export function Moviepreviw({ title, rating=0, synopsis, tag }) {
           <div className={style.stars}> {renderStars()}</div>
         </div>
         <div className={style.info}>
-          <img src="https://github.com/ismael-figueiredo.png" alt="" />
-          <span>Por Ismael Figueiredo</span>
+          <img src={avatarUrl} alt="" />
+          <span>{`Por ${user.name}`}</span>
           <FaRegClock />
           <span> 28/12/2023 às 14:00</span>
         </div>
