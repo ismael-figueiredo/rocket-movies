@@ -40,7 +40,7 @@ export function CreateMovie() {
     }
     if (newTag) {
       return alert(
-        "Você deito uma tag no campo para adicionar, cique para adicionar ou remova."
+        "Você deixou uma tag no campo para adicionar, clique para adicionar ou remova."
       )
     }
     await api.post("/notes", {
