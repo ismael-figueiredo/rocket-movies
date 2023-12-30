@@ -1,0 +1,35 @@
+.container{
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  background-color: #a2959589;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  >svg{
+    color:var(--bg-color);
+     animation: heartbeat 2s infinite;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  14% {
+    transform: scale(1.1) rotate(72deg);
+  }
+  28% {
+    transform: scale(1) rotate(144deg);
+  }
+  42% {
+    transform: scale(1.1) rotate(216deg);
+  }
+  70% {
+    transform: scale(1) rotate(288deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}

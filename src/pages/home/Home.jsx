@@ -2,6 +2,8 @@ import style from "./Home.module.css"
 import { useNavigate } from "react-router-dom"
 import { api } from "../../services/api"
 
+import { Loader } from "../../common/Loader/Loader"
+
 import { CardMovie } from "../../components/CardMovie"
 import { Header } from "../../components/Header"
 import { GoPlus } from "react-icons/go"
@@ -36,6 +38,7 @@ export function Home() {
 
   return (
     <div className={style.container}>
+      
       <Header onSearchChange={handleSearchChange} />
       <main>
         <div className={style.title}>
