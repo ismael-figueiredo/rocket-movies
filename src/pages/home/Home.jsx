@@ -21,7 +21,8 @@ export function Home() {
 
   useEffect(() => {
     async function fetchMovies() {
-      const response = await api.get(`/notes?title=${search}`)
+     const response = await api.get(`/notes?title=${search}`)
+
 
       setMovie(response.data)
     }
@@ -30,7 +31,7 @@ export function Home() {
 
   useEffect(() => {
     async function fetchtags() {
-      const response = api.get("/tags")
+      const response = await api.get("/tags")
       settags(response.data)
     }
     fetchtags()

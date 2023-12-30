@@ -12,7 +12,7 @@ export function AuthRoutes() {
 
   useEffect(() => {
     setLoading(true)
-    const timer = setTimeout(() => setLoading(false), 500) // 0.5 segundos
+    const timer = setTimeout(() => setLoading(false), 500) 
 
     return () => clearTimeout(timer)
   }, [location])

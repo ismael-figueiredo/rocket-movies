@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Route, Routes, Navigate, useLocation } from "react-router-dom"
 import {Loader} from "../common/Loader/Loader"
 
@@ -14,7 +14,7 @@ export function AppRoutes() {
 
   useEffect(() => {
     setLoading(true)
-    const timer = setTimeout(() => setLoading(false), 500) // 0.5 segundos
+    const timer = setTimeout(() => setLoading(false), 200) 
 
     return () => clearTimeout(timer)
   }, [location])
